@@ -1,42 +1,40 @@
-
 import styled, { createGlobalStyle } from 'styled-components';
 
-const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
+    font-family: 'Source Sans Pro', sans-serif;
+};
 `;
-export default GlobalStyle;
 
 export const Container = styled.div`
 z-index: 1;
 width: 100%;
+max-width: 1300px;
 margin-inline: auto;
 padding-inline: 50px;
-max-width: 1300px;
 
 @media screen and (max-width: 991px) {
     padding-inline: 30px;
-}
+};
 `;
 
 export const Button = styled.button`
 border-radius: 4px;
-background: ${ ({ primary }) => (primary ? '#4B59F7' : '#0467FB')};
+background: #4b59f7;
 white-space: nowrap;
-padding: ${ ({ big }) => (big ? '12px 64px' : '10px 20px')};
+padding: 10px 20px;
 color: #fff;
-font-size: ${ ({ fontBig }) => (fontBig ? '20px' : '16px') };
+font-size: 16px;
 outline: none;
 border: none;
-cursor: pointer;
 
 &:hover {
-    transition: all 0.3s ease-out;
+    transition: all 0.3 ease-out;
     background: #fff;
-    background: ${ ({ primary }) => (primary ? '#0467FB' : '#4B59F7')};
+    background: #0467fb;
 };
 
 @media screen and (max-width: 960px) {
@@ -44,47 +42,32 @@ cursor: pointer;
 };
 `;
 
-export const InputBox = styled.div`
-    padding: 8px;
-    margin-inline: auto;
-    margin-bottom: 1rem;
+export const Form = styled.form`
+display: flex;
+justify-content: center;
+align-items: center;
 
-    border-top: 2px solid red;
-    border-radius: 5px;
+@media screen and (max-width: 820px) {
+    flex-direction: column;
+    width: 80%;
+};
+`
 
-    line-height: 19px;
-    display: flex;
-    flex-wrap: wrap;
+export const FormInput = styled.input`
+padding: 10px 20px;
+border-radius: 2px;
+margin-right: 10px;
+outline: none;
+border: none;
+font-size: 16px;
+border: 1px solid #fff;
 
-    & > * {
-        flex-basis: 50%;
-        border: 1px solid transparent;
-        outline: none;
-    }
+&::placeholder {
+    color: #242424;
+};
 
-    & > *:focus-visible {
-        outline: none;
-    }
-
-    & > input, select {        
-        box-shadow: 2px 1px 3px black;
-        border-radius: 5px;
-        padding: .2rem;
-    }
-
-    & > input:focus, select:focus {
-        border: 1px solid black;
-    }
-
-    & > input:hover, select:hover {
-        border: 1px solid red;
-        box-shadow: 2px 1px red;
-    }
-
-    @media screen and (max-width: 624px) {
-        & > * {
-            margin-bottom: 5px;
-            flex-basis: 100%;
-        }
-    }
+@media screen and (max-width: 820px) {
+    width: 100%;
+    margin: 0 0 16px 0;
+};
 `;
