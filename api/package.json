@@ -1,0 +1,21 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aritse-stack/mustach.git"
+  },
+  "author": "Valter Estevam Oliveira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aritse-stack/mustach/issues"
+  },
+  "homepage": "https://github.com/Aritse-stack/mustach#readme"
+}
