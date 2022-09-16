@@ -30,6 +30,7 @@ export const Insumos = () => {
             </Container>
         </Section>
         <Section>
+            <Container>
             <SectionRow>
                 <SectionColumn>
 
@@ -38,8 +39,10 @@ export const Insumos = () => {
 
                 </SectionColumn>
             </SectionRow>
+            </Container>
         </Section>
         <Section>
+            <Container>
             <SectionRow>
                 <SectionColumn>
 
@@ -48,6 +51,7 @@ export const Insumos = () => {
                     
                 </SectionColumn>
             </SectionRow>
+            </Container>
         </Section>
         </>
     );

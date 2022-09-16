@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import { NavBar, Footer } from './components';
 import { Home, Insumos } from './pages';
-import GlobalStyle from './GlobalStyles';
+import { GlobalStyle } from './GlobalStyles';
 
 export const App = () => {
   return (
