@@ -43,20 +43,28 @@ border: none;
 `;
 
 export const Form = styled.form`
+padding: 30px 10px;
 display: flex;
+flex-direction: column;
 justify-content: center;
 align-items: center;
+gap: 2rem;
+box-shadow: 1px 1px 9px #fff;
+border-radius: 9px;
 
 @media screen and (max-width: 820px) {
     flex-direction: column;
     width: 80%;
+};
+
+& > input, select {
+    min-width: 300px;
 };
 `
 
 export const FormInput = styled.input`
 padding: 10px 20px;
 border-radius: 2px;
-margin-right: 10px;
 outline: none;
 border: none;
 font-size: 16px;
@@ -70,4 +78,25 @@ border: 1px solid #fff;
     width: 100%;
     margin: 0 0 16px 0;
 };
+`;
+
+export const FormSelect = styled.select`
+padding: 10px 20px;
+border-radius: 2px;
+outline: none;
+border: none;
+font-size: 16px;
+border: 1px solid #fff;
+
+&::placeholder {
+    color: #242424;
+};
+
+@media screen and (max-width: 820px) {
+    width: 100%;
+    margin: 0 0 16px 0;
+};
+`;
+
+export const FormOption = styled.option`
 `;

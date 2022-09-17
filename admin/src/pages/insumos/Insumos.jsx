@@ -1,7 +1,8 @@
 
 import {
     formInputs,
-    textInput
+    textInput,
+    textUpdate
 } from './Data.js';
 
 import {
@@ -9,10 +10,29 @@ import {
     SectionRow,
     SectionColumn,
     TextSection,
-    Form
 } from '../../components';
 
-import { Container } from '../../GlobalStyles.jsx';
+import { Container, Form, FormInput, FormSelect, FormOption } from '../../GlobalStyles.jsx';
+
+const fields = [];
+
+formInputs.forEach( el => {
+    let item
+
+    if ( el.type === 'input' ) {
+        item = <FormInput name={el.name} placeholder={el.placeholder}/>
+    } else if ( el.type === 'select' ) {
+        let opts = []
+
+        el.options.forEach( op => opts.push( <FormOption value={op}>{op}</FormOption>) );
+
+        item = (<FormSelect>
+                { opts }
+            </FormSelect>);
+    }
+        
+    item ? fields.push(item) : null;
+});
 
 export const Insumos = () => {
     return (
@@ -24,7 +44,9 @@ export const Insumos = () => {
                         <TextSection { ...textInput }/>
                     </SectionColumn>
                     <SectionColumn>
-                        <Form { ...formInputs }/>
+                        <Form>
+                            { fields }
+                        </Form>
                     </SectionColumn>
                 </SectionRow>
             </Container>
@@ -33,10 +55,15 @@ export const Insumos = () => {
             <Container>
             <SectionRow>
                 <SectionColumn>
-
+                    <Form>
+                        <FormSelect>
+                            <FormOption defaultValue=''>Insumos cadastrados</FormOption>
+                        </FormSelect>
+                        { fields }
+                    </Form>
                 </SectionColumn>
                 <SectionColumn>
-
+                    <TextSection { ...textUpdate }/>
                 </SectionColumn>
             </SectionRow>
             </Container>
